@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+
+
+<div class="row text-center mt-5 ">
+
+    <div class="card text-dark col-sm-12 mb-3 mx-auto p-0" style="max-width: 50%;">
+
+        <div class="card-header p-3 "> Into Notes in No Time </div>
+
+        <div class="card-body p-3">
+
+            <h5 class="card-title mt-2">Upload any audio file</h5>
+            <!-- <button type="button" class="btn btn-dark">Notefy</button> -->
+            <button type="button" class="btn btn-dark btn-lg btn-block m-4 center"> Notefy </button>
+
+            <ul class="list-unstyled d-flex justify-content-center">
+                <li class="m-2 py-2 px-1 rounded-circle border border-dark">
+                    <fa-icon [icon]="uploadOptions[0]"  size="lg" class="mx-2"></fa-icon>
+                </li>
+                <li class="m-2 py-2 px-1 rounded-circle border border-dark">
+                    <fa-icon [icon]="uploadOptions[1]"  size="lg" class="mx-2"></fa-icon>
+                </li>
+            </ul>
+
+            <p class="card-text">Concise. Ease. Time Saving.</p>
+            
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Grid -->
+
+<div class="row m-5">
+
+    <div class="col-6 my-4" *ngFor="let feature of features">
+
+        <div class="card mb-3 border-0" style="max-width: 90%;">
+            <div class="row g-0">
+              <div class="col-md-4 mx-2">
+                <img src={{feature.src}} class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-7">
+                <div class="card-body">
+                  <h5 class="card-title">Feature {{feature.id}}</h5>
+                  <p class="card-text">{{feature.content}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+
+
+
+
+<app-footer></app-footer>
+
+
