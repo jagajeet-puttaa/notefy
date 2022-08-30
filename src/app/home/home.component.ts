@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { faGoogleDrive } from '@fortawesome/free-brands-svg-icons';
 import { faUpload } from '@fortawesome/free-solid-svg-icons'
 // import { 1.svg } from "assets\images\1.svg";
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-home',
@@ -9,6 +11,17 @@ import { faUpload } from '@fortawesome/free-solid-svg-icons'
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  name!: string;
+  postData(){
+    let url="http://127.0.0.1:8000/"
+    this.http.post(url,{
+      name:this.name}).toPromise().then((data:any)=>{
+        console.log(data)
+      })
+    }
+    
+  
 
   uploadOptions = [faUpload,faGoogleDrive]
 
@@ -45,9 +58,25 @@ export class HomeComponent implements OnInit {
     },
   ]
 
-  constructor() { }
 
-  ngOnInit(): void {
+
+  constructor(private http :HttpClient) {}
+
+  obj : any = [];
+
+
+  send_data ={
+    "add":"true",
+    "obj":{
+      "name":"putta",
+      "dept":"cse",
+      "age":"11",
+      "from":"angular"
+    }
   }
+  ngOnInit(): void {
+    this.obj=this.http.get("http://127.0.0.1:8000/" ).subscribe(data=>this.obj=data)
 
+    this.obj=this.http.post("http://127.0.0.1:8000/",this.send_data ).subscribe(data=>this.obj=data)
+  }
 }

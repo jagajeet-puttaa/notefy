@@ -8,6 +8,11 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {HttpClientModule} from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
+import { AboutComponent } from './about/about.component';
+import { FileuploadComponent } from './home/fileupload/fileupload.component';
+import { ResultComponent } from './result/result.component';
 
 
 @NgModule({
@@ -16,12 +21,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HomeComponent,
     NavbarComponent,
     FooterComponent,
+    AboutComponent,
+    FileuploadComponent,
+    ResultComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

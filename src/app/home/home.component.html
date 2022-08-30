@@ -9,18 +9,10 @@
 
         <div class="card-body p-3">
 
-            <h5 class="card-title mt-2">Upload any audio file</h5>
-            <!-- <button type="button" class="btn btn-dark">Notefy</button> -->
-            <button type="button" class="btn btn-dark btn-lg btn-block m-4 center"> Notefy </button>
+            <!-- <h5 class="card-title mt-2">Upload any audio file</h5>
+            <button type="button" class="btn btn-dark btn-lg btn-block m-4 center"> Notefy </button>  -->
 
-            <ul class="list-unstyled d-flex justify-content-center">
-                <li class="m-2 py-2 px-1 rounded-circle border border-dark">
-                    <fa-icon [icon]="uploadOptions[0]"  size="lg" class="mx-2"></fa-icon>
-                </li>
-                <li class="m-2 py-2 px-1 rounded-circle border border-dark">
-                    <fa-icon [icon]="uploadOptions[1]"  size="lg" class="mx-2"></fa-icon>
-                </li>
-            </ul>
+            <app-fileupload></app-fileupload>
 
             <p class="card-text">Concise. Ease. Time Saving.</p>
             
@@ -29,6 +21,18 @@
     </div>
 
 </div>
+
+
+<!-- <div> -->
+  <!-- <p>The data from backend is  {{obj | json}}</p> -->
+  <!-- <input class="mx-5" type="text" [(ngModel)]="name" placeholder="Name"/>
+  <button (click)="postData()">Search</button>
+  <p>{{name}}</p> -->
+
+<!-- </div> -->
+
+
+
 
 <!-- Grid -->
 

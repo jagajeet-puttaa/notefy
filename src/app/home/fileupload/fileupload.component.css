@@ -1,0 +1,12 @@
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.filename{
+    border: 1px solid black;
+}

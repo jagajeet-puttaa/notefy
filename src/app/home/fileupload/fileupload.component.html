@@ -1,0 +1,35 @@
+<div class="card-body p-3">
+
+    <h5 class="card-title mt-2">Upload any audio file</h5>
+    <!-- <button type="button" class="btn btn-dark">Notefy</button> -->
+
+    <p class="my-4" [ngClass]=" prasidha ? 'filename' : '' ">{{fileName}}</p>
+
+    <button type="button" class="btn btn-dark btn-lg btn-block m-3 center" routerLink="/result" (click)="onUpload()" > Notefy </button>
+
+    <!-- Shareable short link of  uoloaded file -->
+    <div class="container text-center jumbotron"
+    *ngIf="shortLink">
+    <h2> Visit Here</h2>
+    <a href="{{shortLink}}">{{shortLink}}</a>
+    </div>      
+
+    <!--Flag variable is used here-->
+    <div class="container my-4" *ngIf="loading">
+        <p class="card-text">Loading ...</p>
+    </div>
+
+    <ul class="list-unstyled d-flex justify-content-center">
+        <li class="m-2 py-2 px-1 rounded-circle border border-dark">
+            <label class="custom-file-upload">
+                <input type="file" (change)="onChange($event)" class="form-control"/>
+                <fa-icon [icon]="uploadOptions[0]"  size="lg" class="mx-2"></fa-icon>
+            </label>
+        </li>
+        <li class="m-2 py-2 px-1 rounded-circle border border-dark">
+            <a href="https://accounts.google.com/AccountChooser?service=writely"><fa-icon [icon]="uploadOptions[1]"  size="lg" class="mx-2"></fa-icon></a>
+        </li>
+    </ul>
+    
+</div>
+
